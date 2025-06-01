@@ -1,0 +1,27 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Enter your username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email (optional)</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+      />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>

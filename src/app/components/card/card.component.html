@@ -1,0 +1,14 @@
+<div class="card uniform-card">
+  <div class="card-image-wrapper">
+    <img src={{product.image}} class="card-img-top" alt="{{product.title}}">
+    <!-- Category icon badge -->
+    <div class="category-badge" title="{{product.category}}">
+      <img [src]="getCategoryImage()" alt="{{product.category}}" class="category-icon">
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <a routerLink="/product/{{product.id}}" class="btn btn-primary">View Details</a>
+  </div>
+</div>

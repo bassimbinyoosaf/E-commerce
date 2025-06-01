@@ -1,0 +1,14 @@
+<ul class="nav"> 
+    <li> 
+        <a routerLink="/">Home</a> 
+    </li> 
+    <li *ngIf="!(isLoggedIn$ | async)"> 
+        <a routerLink="/login">Login</a> 
+    </li> 
+    <li *ngIf="isLoggedIn$ | async" class="profile-menu">
+        <span class="username" *ngIf="userProfile$ | async as userProfile">
+            Welcome, {{ userProfile.username }}
+        </span>
+        <button class="logout-button" (click)="logout()">Logout</button>
+    </li>
+</ul>

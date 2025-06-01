@@ -1,0 +1,164 @@
+.card.uniform-card {
+  margin: 0 auto 40px;
+  width: 300px; /* fixed width for uniformity */
+  height: 420px; /* slightly taller for better spacing */
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-surface, #fff);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+.card.uniform-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(187, 134, 252, 0.2);
+}
+
+.card.uniform-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card.uniform-card:hover::before {
+  opacity: 1;
+}
+
+.card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.card-image-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, rgba(18, 18, 18, 0.8), transparent);
+  z-index: 1;
+}
+
+.card.uniform-card img.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card.uniform-card:hover img.card-img-top {
+  transform: scale(1.05);
+}
+
+/* Category badge styling */
+.category-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 2;
+  overflow: hidden;
+  border: 2px solid var(--color-primary);
+  transform: rotate(0deg);
+}
+
+.category-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(3, 218, 198, 0.1) 100%);
+  z-index: -1;
+}
+
+.category-badge:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 12px rgba(187, 134, 252, 0.3);
+}
+
+.category-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.category-badge:hover .category-icon {
+  transform: scale(1.2);
+}
+
+.card.uniform-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.9) 0%, rgba(18, 18, 18, 1) 100%);
+}
+
+.card.uniform-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+}
+
+.card.uniform-card .card-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* limit to 3 lines */
+  -webkit-box-orient: vertical;
+  margin-bottom: 15px;
+}
+
+.card.uniform-card .btn {
+  align-self: flex-start;
+  padding: 8px 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.card.uniform-card .btn:hover {
+  background-color: var(--color-primary-variant);
+  border-color: var(--color-primary-variant);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

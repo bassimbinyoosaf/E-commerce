@@ -1,0 +1,36 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="hero-title">Discover Amazing Products</h1>
+        <p class="hero-subtitle">Explore our curated collection of high-quality items at unbeatable prices.</p>
+        <div class="category-pills">
+          @for (category of categories; track $index) {
+            <span class="category-pill">{{category}}</span>
+          }
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-image-container">
+          <div class="hero-image-bg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+  <div class="container">
+    <h2 class="section-title">Today's Deals</h2>
+    
+    <div class="row product-grid">
+      @for (product of products; track product.id) {
+        <div class="col-md-4 product-item" #productItem>
+          <app-card [product]="product"></app-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>
